@@ -3,6 +3,8 @@
 ## Overview
 This project implements a model for image captioning specifically tailored to identify and describe traffic violations. The primary objective is to assist in the automated detection and description of traffic offenses captured by CCTV cameras. The model is built using the [X-Linear Attention Networks](https://arxiv.org/pdf/2003.14080.pdf) (X-LAN) architecture, which excels in generating descriptive captions by effectively utilizing high-order interactions between visual and textual features.
 
+**Environment:** Kaggle
+
 ## Data Collection and Preprocessing
 To access the dataset used in this study, you can be found [here](https://www.kaggle.com/datasets/jaluherlambang/indonesian-traffic-violation-on-motorcycle). The dataset was sourced from secondary CCTV footage obtained from eight different locations in Surabaya, Indonesia. The dataset comprises 1,127 images, categorized as follows:
 
