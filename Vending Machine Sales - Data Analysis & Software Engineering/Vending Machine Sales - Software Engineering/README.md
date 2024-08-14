@@ -18,7 +18,7 @@ The dashboard is constructed using a combination of HTML, CSS, and JavaScript, e
 
   - **Desktop**: For larger screens, the dashboard displays a full layout with multiple columns, allowing users to view various data sections simultaneously, leveraging the broader screen space.
 
-- **JavaScript Interactivity**: JavaScript plays a crucial role in loading and parsing the local JSON file that contains the cleaned and analyzed vending machine sales data. The dashboard dynamically updates to display relevant data in response to user interactions. JavaScript functions are also written to enable sorting, filtering, and updating of the dashboard content, with interactive features like dropdowns, charts, and modals being implemented using libraries such as Chart.js or D3.js.
+- **JavaScript Interactivity**: JavaScript plays a crucial role in loading and parsing the local JSON file that contains the cleaned and analyzed vending machine sales data. The dashboard dynamically updates to display relevant data in response to user interactions. JavaScript functions are also written to enable sorting, filtering, and updating of the dashboard content, with interactive features like dropdowns, charts, and modals being implemented using Chart.js.
 
 ## Deployment
 The final dashboard will be deployed on Vercel, providing a live platform where users can interact with the vending machine sales data from Central New Jersey. The website will be connected to a custom domain for easy access, making it available to stakeholders and decision-makers.
