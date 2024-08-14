@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 1 Jayapura - Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS-->
+    <link id="stylesheet" rel="stylesheet" href="css/styles.css">
+
+    <!-- Canvas Chart-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="header-left">
+                <div class="menu-bar">
+                    <button class="toggle-btn" onclick="toggleSidebar()">
+                        <i class="fa-solid fa-bars" style="font-size: 25px; color: #005FB1; background-color: #ffffff; margin-top: 1px;"></i>
+                    </button>
+                </div>
+                <h2>Dashboard</h2>
+            </div>
+        </header>
+
+        <aside id="sidebar">
+            <!--LOGO-->
+            <div class="sidebar-title">
+                <img src="assets/Logo Team 1.jpg" width="189.3" height="84.3">
+                <div class="menu-bar">
+                    <button class="toggle-btn" onclick="toggleSidebar()">
+                        <i class="fa-solid fa-xmark" style="font-size: 25px; color: #005FB1; background-color: #ffffff; margin-top: 1px;"></i>
+                    </button>
+                </div>
+            </div>
+    
+            <!--Sidebar Navigation-->
+            <ul class="sidebar-list">
+
+                <!--Dashboard-->
+                <li class="sidebar-list-item">       
+                    <a href="#">
+                        <img src="assets\icon-sidebar-dashboard.svg" alt="icon-sidebar-dashboard">
+                        Dashboard
+                    </a>
+                </li>
+
+                <hr>
+
+                <!--About-->
+                <li class="sidebar-list-item-about">
+                    <a href="about.html">
+                        <img src="assets\icon-sidebar-about.svg" alt="icon-sidebar-about">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main-container">
+
+            <!-- Filter -->
+            <section id="filter">
+
+                <!--Filter Location-->
+                <div class="filter-item">
+                    <img src="assets\icon-filter-location.svg" alt="Filter Location">   <!--Icon-->
+                    <select id="Location" onchange="filterContent(event)"> <!--ComboBox-->
+                        <option value="all">All Location</option>
+                        <option value="GuttenPlans">GuttenPlans</option>
+                        <option value="EB Public Library">EB Public Library</option>
+                        <option value="Brunswick Sq Mall">Brunswick SQ Mall</option>
+                        <option value="Earle Asphalt">Earle Asphalt</option>
+                    </select>
+                </div>
+                
+                <!--Filter Product-->
+                <div class="filter-item">
+                    <img src="assets\icon-filter-product.svg" alt="Filter Location">
+                    <select id="Product" onchange="filterContent(event)">
+                        <option value="all">All Product</option>
+                    </select>
+                </div>
+
+                <!--Filter Date Range-->
+                <div class="filter-item">
+                    <img src="assets\icon-filter-date_range.svg" alt="Filter Location">
+                    <div class="filter-item-date_range" id="DateRange"> 
+                        <!-- <select id="DateRange" onchange="filterContent(event)"> -->
+
+                        <!--Eksperimen date-->
+                        <!-- TODO: Edit lagi bagian ukuran, warna, padding dan warna. -->
+                            <label for="start_date">Start</label>
+                            <input id="start_date" type="date" min="2022-01-01" max="2022-12-30" name="start_date" value="">
+                            <label for="end_date">End</label>
+                            <input id="end_date" type="date" min="2022-01-01" max="2022-12-30" name="end_date" value="">
+
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id="display-area">
+  
+            </section>
+            
+            <!-- Cards -->
+            <section class="main-cards">
+                <div class="card" id="totalIncomeCard">
+                    <h3>Total Income</h3>
+                    <span>Loading...</span>
+                </div>
+                <div class="card" id="salesVolumeCard">
+                    <h3>Sales Volume</h3>
+                    <span>Loading...</span>
+                </div>
+                <div class="card" id="quantitySoldCard">
+                    <h3>Quantity of Product Sold</h3>
+                    <span>Loading...</span>
+                </div>
+            </section>
+        
+            <!-- Charts -->
+            <section class="charts">
+                <div class="charts-card">
+                    <label class="chart-title">Amount of Sales by Category</label>
+                    <canvas id="myChart" ></canvas>
+                </div>
+            </section>
+
+            <!-- Table and Charts -->
+            <section class="charts-and-table">
+                <!-- Table -->
+                <section class="table">
+                    <div class="table-card">
+                        <label class="table-title">Top Products</label>
+                        <!-- Tambahkan input pencarian di sini -->
+                        <input type="text" id="searchInput" placeholder="Search">
+                        <div id="tableContent"></div>
+                        <div id="paginationControls"></div>
+                    </div>
+                </section>
+    
+                <!-- Charts -->
+                <section class="charts">
+                    <div class="charts-card2">
+                        <label class="chart-title">Quantity of Product Sold Based on Price</label>
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                </section>
+            </section>
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <canvas id="modalCanvas"></canvas>
+            </div>
+
+                <!-- Footer -->
+            <footer>
+                <p>&copy; Dashboard by <b>Team 1 Jayapura</b></p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
