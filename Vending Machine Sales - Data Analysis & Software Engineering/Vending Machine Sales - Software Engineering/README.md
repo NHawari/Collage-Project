@@ -23,5 +23,5 @@ The dashboard is constructed using a combination of HTML, CSS, and JavaScript, e
 ## Deployment
 The final dashboard will be deployed on Vercel, providing a live platform where users can interact with the vending machine sales data from Central New Jersey. The website will be connected to a custom domain for easy access, making it available to stakeholders and decision-makers.
 
-## View the Live Dashboard
-You can view the live dashboard at the following link: [View Dashboard](https://jayapura-tim-1.vercel.app/index.html).
+## Live Dashboard Website
+You can view the live dashboard website at [here](https://jayapura-tim-1.vercel.app/index.html).
